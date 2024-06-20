@@ -35,7 +35,6 @@ main {
   color: var(--red);
 }
 
-
 /* Focus styles */
 a:focus,
 button:focus,
@@ -58,8 +57,8 @@ select:focus,
   }
 }
 .header nav ul {
-  display: none;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: start;
   column-gap: 0.5rem;
   row-gap: 0.75rem;
@@ -78,7 +77,6 @@ select:focus,
   }
 }
 .header nav ul li {
-  display: flex;
   flex-direction: row;
   align-items: center;
   column-gap: 0.25rem;
@@ -110,7 +108,7 @@ section.page-footer {
 
 section.page-header > ul,
 section.page-footer > ul {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -166,7 +164,7 @@ a {
   transition-timing-function: ease-in-out;
 }
 a:has(svg) {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   column-gap: 0.25rem;
@@ -266,9 +264,23 @@ input[type=url],
 input[type=password],
 input[type=text],
 input[type=number],
+select,
 textarea {
+  color:var(--input-color);
+  background:var(--input-background);
+  border:var(--input-border);
+  line-height:20px;
+  width:250px;
+  font-size:99%;
+  margin-bottom:10px;
+  margin-top:5px;
+  appearance:none;
   padding: 0.35rem 0.5rem;
   border-radius: 0.35rem;
+}
+
+input[type=number] {
+  appearance: textfield;
 }
 
 label {
@@ -285,6 +297,7 @@ label:has(input) {
 }
 label input[type=checkbox] {
   margin-bottom: 0;
+  accent-color: var(--button-primary)
 }
 
 fieldset {
@@ -365,7 +378,8 @@ td {
     --input-color: var(--overlay0);
     --input-placeholder-color: var(--surface2);
     --input-focus-color: var(--overlay0);
-    --input-focus-border-color: var(--blue);
+    --input-focus-border-color: var(--surface1);
+    --input-border: var(--surface1);
     --input-focus-box-shadow: 0 0 0 2px var(--overlay1);
     --alert-color: var(--overlay0);
     --alert-background-color: var(--base);
@@ -425,3 +439,6 @@ td {
     --counter-color: var(--overlay0);
   }
 
+
+
+  
